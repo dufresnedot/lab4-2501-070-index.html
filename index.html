@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>图书商城</title>
+<link rel="stylesheet" href="css/lab4-2501-070-index.css">
+</head>
+
+<body>
+
+<header>
+    <h2>
+    <span class="logo-white">DUFRESNE</span>
+    <span class="logo-orange">BOOKSHOP</span>
+</h2>
+    <span onclick="showLogin()">登录/注册</span>
+</header>
+
+<div class="container">
+
+    <div class="sidebar">
+    <h2>图书分类</h2>
+    <ul>
+        <li>小说</li>
+        <li>故事</li>
+        <li>科学</li>
+        <li>历史</li>
+    </ul>
+
+    <!-- ANIMASIÝALY SURAT -->
+    <div class="ad-slider">
+        <img src="img/book1.jpg">
+        <img src="img/book2.jpg">
+        <img src="img/book3.jpg">
+    </div>
+</div>
+
+    <div class="main">
+        <h2>热门推荐</h2>
+    <div class="slider">
+    <img src="img/book10.jpg">
+    <img src="img/book11.jpg">
+    <img src="img/book12.jpg">
+</div>
+        
+             
+        <div class="books">
+        
+            <div class="book">
+    <img src="img/book1.jpg">
+    <p>人间失格</p >
+    <span>￥45</span>
+    <button>购买</button>
+</div>
+
+<div class="book">
+    <img src="img/book2.jpg">
+    <p>活着</p >
+    <span>￥50</span>
+    <button>购买</button>
+</div>
+
+<div class="book">
+    <img src="img/book3.jpg">
+    <p>围城</p >
+    <span>￥39</span>
+    <button>购买</button>
+</div>
+
+<div class="book">
+    <img src="img/book4.jpg">
+    <p>追风筝的人</p >
+    <span>￥55</span>
+    <button>购买</button>
+</div>
+
+<div class="book">
+    <img src="img/book4.jpg">
+    <p>追风筝的人</p >
+    <span>￥55</span>
+    <button>购买</button>
+</div>
+<div class="book">
+    <img src="img/book3.jpg">
+    <p>围城</p >
+    <span>￥55</span>
+    <button>购买</button>
+</div>
+<div class="book">
+    <img src="img/book2.jpg">
+    <p>活着</p >
+    <span>￥55</span>
+    <button>购买</button>
+</div>
+<div class="book">
+    <img src="img/book1.jpg">
+    <p>人间失格</p >
+    <span>￥55</span>
+    <button>购买</button>
+</div>
+        </div>
+
+
+    </div>
+
+    <div class="right">
+        <h2>广告</h2>
+        <p>满100减20</p >
+    </div>
+
+</div>
+
+<div id="box" class="box">
+    <div id="login">
+        <h3>登录</h3>
+        <input id="u" placeholder="用户名">
+        <input id="p" type="password" placeholder="密码">
+        <button onclick="login()">登录</button>
+        <p onclick="showReg()">去注册</p >
+    </div>
+
+    <div id="reg">
+        <h3>注册</h3>
+        <input id="ru" placeholder="用户名">
+        <input id="rp" type="password" placeholder="密码">
+        <button onclick="reg()">注册</button>
+        <p onclick="showLogin()">去登录</p >
+    </div>
+</div>
+
+<script>
+function showLogin(){
+    document.getElementById("box").style.display="block";
+    document.getElementById("login").style.display="block";
+    document.getElementById("reg").style.display="none";
+}
+
+function showReg(){
+    document.getElementById("login").style.display="none";
+    document.getElementById("reg").style.display="block";
+}
+
+function reg(){
+    localStorage.setItem("u",document.getElementById("ru").value);
+    localStorage.setItem("p",document.getElementById("rp").value);
+    alert("注册成功");
+    showLogin();
+}
+
+function login(){
+    if(
+        document.getElementById("u").value==localStorage.getItem("u") &&
+        document.getElementById("p").value==localStorage.getItem("p")
+    ){
+        alert("登录成功");
+    }else{
+        alert("错误");
+    }
+}
+</script>
+<footer>
+    &copy; 2026 DUFRESNE BOOKSHOP. 版权所有.
+</footer>
+
+</body>
+</html>
